@@ -320,4 +320,75 @@ display: none;
   .main-heading {
     font-size: 1.7rem
   }
+}/* Carousel Navigation Buttons */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 34px;
+  height: 34px;
+  background: rgba(0, 0, 0, 0.65); /* semi-transparent black */
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background 0.3s ease, transform 0.2s ease;
+  opacity: 1; /* always visible */
+}
+
+/* Rounded corners for each side */
+.carousel-control-prev {
+  border-radius: 0 12px 12px 0; /* right corners rounded */
+  left: 0;
+}
+
+.carousel-control-next {
+  border-radius: 12px 0 0 12px; /* left corners rounded */
+  right: 0;
+}
+
+/* Hover Effect */
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background: rgba(0, 0, 0, 0.9);
+  transform: translateY(-50%) scale(1.08);
+}
+
+/* White Arrow Icons */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-image: none; /* remove Bootstrap default */
+  filter: invert(0) brightness(200%); /* pure white arrows */
+  width: 22px;
+  height: 22px;
+  position: relative;
+}
+
+/* Custom white arrow icons (cleaner than Bootstrap defaults) */
+.carousel-control-prev-icon::before,
+.carousel-control-next-icon::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+  transform-origin: center;
+}
+
+.carousel-control-prev-icon::before {
+  transform: translate(-50%, -50%) rotate(-135deg);
+}
+
+.carousel-control-next-icon::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+/* For mobile, keep controls slightly inside */
+@media (max-width: 768px) {
+  .carousel-control-prev {
+    left: 10px;
+  }
+
+  .carousel-control-next {
+    right: 10px;
+  }
 }
